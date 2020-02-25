@@ -5,7 +5,7 @@
 
 # Get
 ```
-git clone https://github.com/roshnaeem/Build-Bit-Website.git
+git clone https://github.com/roshnaeem/RESTful-HTTP-API.git
 ```
 
 # Built With
