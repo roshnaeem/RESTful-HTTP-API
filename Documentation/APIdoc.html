@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>API-Document</title>
+	<style type="text/css">
+		img{
+			margin-left: 20px;
+		}
+		p{
+			font-family:verdana;
+			font-size: 20px;
+		}
+
+
+
+	</style>
+</head>
+<body>
+
+	<center><h1 style="color:blue;"> Build a REST API with Node.js and SQLite</h1>	<img src="images/node.png" style="width: 250px; height: 150px;">
+		<img src="../images/sql.png" style="width: 250px; height: 150px;"></center>
+
+
+	<h1>Web service link port: 8000</h1>
+	<h2>The Node.js REST API</h2>
+	<p>To start with node.js project, create a new node project. The package.json file needs following packages. </p>
+	<img src="../images/json.jpg" style="width: 400px; margin-left:100px; height: 300px;">
+	<br>
+	<p>SQLite is a C library that implements an SQL database engine. It is a Relational Database Management System (or RDBMS). Most of the SQL databases work with the client/server model. Take MySQL for an example. To enter and receive data from a MySQL database you need to send a request to the MySQL server, which on reception will provide you with the appropriate response. Contrary to MySQL, SQLite databases are operated directly from the disk. There is no need to create requests to the server. One can create the main server script (server.js) using Express. Express.js is a very simple implementation for a web server, and provides the all CRUD (create, retrieve, update and delete) methods. Within computer programming, the acronym CRUD stands for create, read, update and delete. These are the four basic functions of persistent storage. Also, each letter in the acronym can refer to all functions executed in relational database applications and mapped to a standard HTTP method, SQL statement or DDS operation. <b>Methods can also have the property of "idempotence" in that the side-effects of N > 0 identical requests is the same as for a single request. The methods GET, HEAD, PUT and DELETE share this property.</b> We already have added "start" : "node server.js" in json file as shown in snapshot given above. it means one can start a server with command <b>node server.js</b>
+
+</p>
+	
+
+
+	<br><br>
+	<center><h2 style="color:blue;">CREATE</h2></center>
+	<h2>URI for POST request </h2> (<a href="http://localhost:8000/api/customer"> http://localhost:8000/api/customer"</a> )
+	<p>The POST method is used to request that the origin server accept the entity enclosed in the request as a new subordinate of the resource identified by the Request-URI in the Request-Line. New entities can be added using app.post method of express.js. The data of new entity is added in the form of json object. It is also checked with Postman library. The new object data becomes the part of database. A customer may use CRUD to create an account and access that account when returning to a particular site. The user may then update personal data or change billing information. On the other hand, an operations manager might create product records, then call them when needed or modify line items.   </p>
+	<p>The data is posted in the form of <b>json object</b> in database through post method. the results shows the status <b>success</b>. It means the new object has created and added in database. </p>
+	<img src="../images/post.jpg" style="width: 700px; height: 400px;">
+	<br><br>
+
+	<center><h2 style="color:blue;">RETRIEVE</h2></center>
+	<h2>URI for Get request </h2>(<a href="http://localhost:8000/api/customers"> http://localhost:8000/api/customers"</a> )
+	<p>This shows all the users entites listed in the database. It provides the data in the form of json objects. The GET method means retrieve whatever information (in the form of an entity) is identified by the Request-URI. The method applied on this source is app.get which can be used with the express library. </p>
+	<img src="../images/customers list.jpg" style="width: 600px; height: 250px;">
+
+	<br><br>
+
+	<h2>URI for Get request of one entity </h2>(<a href="http://localhost:8000/api/customer/id"> http://localhost:8000/api/customer/id"</a> )
+	<p>This shows the user with the specific id mentioned in uri as json object. 
+	The method applied on this source is app.get which can be used with the express library.</p>
+	<img src="images/customer2.jpg" style="width: 600px; height: 150px;">
+	<br><br>
+
+	<center><h2 style="color:blue;">UPDATE</h2></center>
+	<h2>URI for Delete request </h2>(<a href="http://localhost:8000/api/customer/id"> http://localhost:8000/api/customer/id"</a> )
+	<p>The PUT method requests that the enclosed entity be stored under the supplied Request-URI. If the Request-URI refers to an already existing resource, the enclosed entity SHOULD be considered as a modified version of the one residing on the origin server. If an existing resource is modified, either the 200 (OK) or 204 (No Content) response codes SHOULD be sent to indicate successful completion of the request. If the resource could not be created or modified with the Request-URI, an appropriate error response SHOULD be given that reflects the nature of the problem.  </p>
+	<p>The data or object which one wants to update should be given in the form of <b>json object</b> in database through put method. PUT is HTTP 1.1 method to update data. The results shows the status <b>success</b>. It means the given object has modified and updated in database. </p>
+	<img src="../images/post.jpg" style="width: 700px; height: 400px;">
+	<img src="../images/update.jpg" style="width: 600px; height: 300px;">
+
+
+
+
+	<center><h2 style="color:blue;">DELETE</h2></center>
+	<h2>URI for Delete request </h2>(<a href="http://localhost:8000/api/customer/id"> http://localhost:8000/api/customer/id"</a> )
+	<p>The DELETE method requests that the origin server delete the resource identified by the Request-URI. To delete any entity, enter id of that entity in uri. The specific entity will be delted from database. For this, express method app.delete is used. </p>
+	<img src="../images/delete.jpg" style="width: 600px; height: 350px;">
+
+
+	
+<br><br>
+</body>
+</html>
